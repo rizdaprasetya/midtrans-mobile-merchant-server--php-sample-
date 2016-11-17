@@ -17,3 +17,9 @@ Upload these to your host, and make sure the url '[your server endpoint]/charge'
 
 ## Notes
 This is just for basic implementation reference, in production, you should implement your backend more securely.
+
+### Get help
+* [Midtrans&nbsp;](https://www.midtrans.com)
+* [Midtrans registration](https://dashboard.midtrans.com/register)
+* [Midtrans documentation](http://docs.midtrans.com)
+* Can't find answer you looking for? email to [support@midtrans.com](mailto:support@midtrans.com)
