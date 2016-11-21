@@ -13,6 +13,7 @@ This endpoint is just used to do the charging to Midtrans Payment API with added
 So the response is just the same as the payment response from Midtrans Payment API.
 
 ## How to use
+Edit file `charge/index.php`, insert your Midtrans Account Server Key to `'<server key>'`.
 Upload these to your host, and make sure the url `[your server endpoint]/charge` can be accessed from the mobile app.
 
 ## Notes
