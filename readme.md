@@ -51,10 +51,9 @@ curl -X POST -d '{
 }' "http://<your host>/charge"
 ```
 
-note: dont forget to change `"http://<your host>/charge"` to your url.
-You can also import that curl command to Postman.
+Note: dont forget to change `"http://<your host>/charge"` to your url.
 
-You can test
+You can also import that curl command to Postman.
 
 ## Notes
 This is just for basic implementation reference, in production, you should implement your backend more securely.
