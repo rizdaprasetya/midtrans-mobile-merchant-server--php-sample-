@@ -3,14 +3,23 @@
 This is a testing server for the development of Veritran's IOs and Android SDK. Also acts as a reference implementation for the methods to be implemented by merchants to use the mobile sdk.
 Please refer more to the [Documentation of mobile SDK](http://mobile-docs.midtrans.com/)
 
-## Required 
-There is only one endpoint from the merchant server that are required to use this SDK.
+There is only one endpoint from the merchant server that are required to use Midtrans mobile SDK.
 
-`/charge` - used to do the charging of the transactions.
+## Endpoints
 
-This endpoint is just used to do the charging to Midtrans Payment API with added server key on the header.
+```
+POST /charge
+```
 
-So the response is just the same as the payment response from Midtrans Payment API.
+This endpoint will redirect client request to Midtrans Snap API `'https://app.midtrans.com/snap/v1/transactions' or 'https://app.sandbox.midtrans.com/snap/v1/transactions'` with added HTTP header generated based on your Midtrans `Server Key`.
+
+The response of API will be printed/returned to client as is. Example response that will be printed
+
+```
+{
+  "token": "45aafdbf-831b-40e6-a042-04b80c195324"
+}
+```
 
 ## How to use
 Edit file `charge/index.php`, insert your Midtrans Account Server Key to `'<server key>'`.
