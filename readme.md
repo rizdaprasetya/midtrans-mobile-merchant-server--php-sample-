@@ -29,7 +29,11 @@ Upload these to your host, and make sure the url `[your server endpoint]/charge`
 You can mock client's request by executing this CURL command to the `/charge` endpoint:
 
 ```
-curl -X POST -d '{
+curl -X POST \
+  https://api.sandbox.veritrans.co.id/v2/charge \
+  -H 'accept: application/json' \
+  -H 'content-type: application/json' \
+  -d '{
   "transaction_details": {
     "order_id": "mobile-12345",
     "gross_amount": 280000
@@ -48,7 +52,7 @@ curl -X POST -d '{
     "last_name": "Khannedy",
     "phone": "628112341234"
   }
-}' "http://<your host>/charge"
+}' 'http://<your host>/charge'
 ```
 
 Note: dont forget to change `"http://<your host>/charge"` to your url.
