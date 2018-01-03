@@ -3,7 +3,7 @@ php:
   - '5.6'
   - '7.0'
   - '7.1'
-  - hhvm
+  # - hhvm
 before_script:
   - wget -O phpunit https://phar.phpunit.de/phpunit-5.phar
   - chmod +x phpunit

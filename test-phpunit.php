@@ -24,13 +24,13 @@ class CurlTest extends TestCase
         "last_name": "Khannedy",
         "phone": "628112341234"
       }
-    }\' \'localhost:8000/charge/?key=VT-server-LOpE7O8_7niPnHylBjBz9x2x\'';
-    protected static $cmdstr = 'nohup php -S localhost:8000 >> /dev/null 2>&1 & echo $!';
-    protected static $killCommand = 'pkill -f localhost:8000';
+    }\' \'localhost:8001/charge/?key=VT-server-LOpE7O8_7niPnHylBjBz9x2x\'';
+    protected static $cmdstr = 'nohup php -S localhost:8001 >> /dev/null 2>&1 & echo $!';
+    protected static $killCommand = 'pkill -f localhost:8001';
 
     protected function setUp(){
         exec(self::$cmdstr);
-        sleep(5);
+        sleep(15);
     }
 
     public function testExecCurl(){
