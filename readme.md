@@ -29,33 +29,31 @@ Upload these to your host, and make sure the url `[your server endpoint]/charge`
 You can mock client's request by executing this CURL command to the `/charge` endpoint:
 
 ```
-curl -X POST \
-  https://api.sandbox.veritrans.co.id/v2/charge \
-  -H 'accept: application/json' \
-  -H 'content-type: application/json' \
-  -d '{
-  "transaction_details": {
-    "order_id": "mobile-12345",
-    "gross_amount": 280000
-  },
-  "item_details": [
-    {
-      "id": "A01",
-      "price": 280000,
-      "quantity": 1,
-      "name": "Mie Ayam Komplit"
-    }
-  ],
-  "customer_details": {
-    "email": "tester@example.com",
-    "first_name": "Budi",
-    "last_name": "Khannedy",
-    "phone": "628112341234"
-  }
-}' 'http://<your host>/charge'
+curl -X POST -d '{  
+   "transaction_details":{  
+      "order_id":"mobile-12345",
+      "gross_amount":280000
+   },
+   "item_details":[  
+      {  
+         "id":"A01",
+         "price":280000,
+         "quantity":1,
+         "name":"Mie Ayam Komplit"
+      }
+   ],
+   "customer_details":[  
+      {  
+         "email":"tester@example.com",
+         "first_name":"Budi",
+         "last_name":"Khannedy",
+         "phone":"628112341234"
+      }
+   ]
+}' "https://<your url>/charge/index.php"
 ```
 
-Note: dont forget to change `"http://<your host>/charge"` to your url.
+Note: dont forget to change `"http://<your url>/charge/index.php"` to your url where you hosted the `/charge/index.php`.
 
 You can also import that curl command to Postman.
 
