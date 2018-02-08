@@ -23,10 +23,12 @@ The response of API will be printed/returned to client as is. Example response t
 
 ## How to use
 Edit file `charge/index.php`, insert your Midtrans Account Server Key to `'<server key>'`.
-Upload these to your host, and make sure the url `[your server endpoint]/charge` can be accessed from the mobile app.
+Upload these to your host, and make sure the url `[url where you host this]/charge/index.php` can be accessed from the mobile app.
+
+Set `[url where you host this]/charge/index.php` as `merchant base url` in mobile SDK. (refer to [the mobile SDK doc](https://mobile-docs.midtrans.com))
 
 ## Testing
-You can mock client's request by executing this CURL command to the `/charge` endpoint:
+You can mock client's request by executing this CURL command to the `/charge/index.php` endpoint:
 
 ```
 curl -X POST -d '{  
