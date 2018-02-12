@@ -1,4 +1,12 @@
 <?php
+// Set your server key (Note: Server key for sandbox and production mode are different)
+$server_key = '<server key>';
+// Set true for production, set false for sandbox
+$is_production = false;
+
+$api_url = $is_production ? 'https://app.midtrans.com/snap/v1/transactions' : 'https://app.sandbox.midtrans.com/snap/v1/transactions';
+
+
 // Check if request doesn't contains `/charge` in the url/path, display 404
 if( !strpos($_SERVER['REQUEST_URI'], '/charge') ) {
   http_response_code(404); 
@@ -10,17 +18,10 @@ if( $_SERVER['REQUEST_METHOD'] !== 'POST'){
   echo "Page not found or wrong HTTP request method is used"; exit();
 }
 
-// Set your server key (Note: Server key for sandbox and production mode are different)
-$server_key = '<server key>';
-
-// Set true for production, set false for sandbox
-$is_production = false;
-
-$api_url = $is_production ? 'https://app.midtrans.com/snap/v1/transactions' : 'https://app.sandbox.midtrans.com/snap/v1/transactions';
-
 // get the HTTP POST body of the request
 $request_body = file_get_contents('php://input');
-
+// set response's content type as JSON
+header('Content-Type: application/json');
 // call charge API using request body passed by mobile SDK, then print out the result
 echo chargeAPI($api_url, $server_key, $request_body);
 
