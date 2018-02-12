@@ -1,17 +1,17 @@
-# Merchant Server Reference implementation for mobile Apps (PHP version)
+Simple Merchant Server Implementation Reference for Mobile SDK (PHP version).
 
-This is a testing server for the development of Midtrans's IOs and Android SDK. Also acts as a reference implementation for the methods to be implemented by merchants to use the mobile sdk.
-Please refer more to the [Documentation of mobile SDK](http://mobile-docs.midtrans.com/)
-
-There is only one endpoint from the merchant server that are required to use Midtrans mobile SDK.
+## Description
+This is a example mobile SDK server for Midtrans's iOS and Android SDK, as an implementation reference to use the mobile sdk.
+Please read more in [Documentation of Midtrans mobile SDK](http://mobile-docs.midtrans.com/)
 
 ## Endpoints
+There is only one endpoint that are required to use Midtrans mobile SDK:
 
 ```
 POST /charge
 ```
 
-This endpoint will redirect client request to Midtrans Snap API `'https://app.midtrans.com/snap/v1/transactions' or 'https://app.sandbox.midtrans.com/snap/v1/transactions'` with added HTTP header generated based on your Midtrans `Server Key`.
+This endpoint will proxy/forward client request to Midtrans Snap API `'https://app.midtrans.com/snap/v1/transactions'` (or `'https://app.sandbox.midtrans.com/snap/v1/transactions'` for sandbox) with added HTTP Authorization Header generated based on your Midtrans `Server Key`.
 
 The response of API will be printed/returned to client as is. Example response that will be printed
 
@@ -21,11 +21,14 @@ The response of API will be printed/returned to client as is. Example response t
 }
 ```
 
-## How to use
+## Usage
 Edit file `charge/index.php`, insert your Midtrans Account Server Key to `'<server key>'`.
-Upload these to your host, and make sure the url `[url where you host this]/charge/index.php` can be accessed from the mobile app.
+Upload these to your host, and make sure the url `<url where you host this>/charge/index.php` can be accessed from the mobile app.
 
-Set `[url where you host this]/charge/index.php` as `merchant base url` in mobile SDK. (refer to [the mobile SDK doc](https://mobile-docs.midtrans.com))
+Set `<url where you host this>/charge/index.php` as `merchant base url` in mobile SDK. (refer to [Midtrans mobile SDK doc](https://mobile-docs.midtrans.com))
+
+> **Advanced Tips:**
+> You can also configure your HTTP server to route `<url where you host this>/charge` url to `/charge/index.php` file, so the `merchant base url` can be just configured as `<url where you host this>/charge`(without /index.php).
 
 ## Testing
 You can mock client's request by executing this CURL command to the `/charge/index.php` endpoint:
@@ -60,7 +63,7 @@ Note: dont forget to change `"http://<your url>/charge/index.php"` to your url w
 You can also import that curl command to Postman.
 
 ## Notes
-This is just for basic implementation reference, in production, you should implement your backend more securely.
+This is just for very basic implementation reference, in production, you should implement your backend more securely.
 
 ### Get help
 * [Midtrans&nbsp;](https://www.midtrans.com)
