@@ -2,7 +2,13 @@ Simple Merchant Server Implementation Reference for Mobile SDK (PHP version).
 
 ## Description
 This is a example mobile SDK server for Midtrans's iOS and Android SDK, as an implementation reference to use the mobile sdk.
-Please read more in [Documentation of Midtrans mobile SDK](http://mobile-docs.midtrans.com/)
+Please read more in [Documentation of Midtrans mobile SDK](http://mobile-docs.midtrans.com/).
+
+## Purpose
+The main idea why this server implementation needed is: **To securely add HTTP Authorization Header** from server side.
+This auth header is generated from **server key** (from your Midtrans account), this server key is secret, and should only be kept in server side, not client side (mobile app can be easily reverse engineered to extract any secret).
+
+Additionally, it allows you to tweak JSON request parameter as needed from server side.
 
 ## Endpoints
 There is only one endpoint that are required to use Midtrans mobile SDK:
@@ -11,7 +17,7 @@ There is only one endpoint that are required to use Midtrans mobile SDK:
 POST /charge
 ```
 
-This endpoint will proxy/forward client request to Midtrans Snap API `'https://app.midtrans.com/snap/v1/transactions'` (or `'https://app.sandbox.midtrans.com/snap/v1/transactions'` for sandbox) with added HTTP Authorization Header generated based on your Midtrans `Server Key`.
+This endpoint will **proxy (forward)** client request to Midtrans Snap API `'https://app.midtrans.com/snap/v1/transactions'` (or `'https://app.sandbox.midtrans.com/snap/v1/transactions'` for sandbox) with **HTTP Authorization Header** generated based on your Midtrans `Server Key`.
 
 The response of API will be printed/returned to client as is. Example response that will be printed
 
