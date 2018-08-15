@@ -23,7 +23,8 @@ The response of API will be printed/returned to client as is. Example response t
 
 ```
 {
-  "token": "45aafdbf-831b-40e6-a042-04b80c195324"
+    "token": "413ae932-471d-4c41-bfb4-e558cc271dcc",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v2/vtweb/413ae932-471d-4c41-bfb4-e558cc271dcc"
 }
 ```
 
