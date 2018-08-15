@@ -14,7 +14,7 @@ Additionally, it allows you to tweak JSON request parameter as needed from serve
 There is only one endpoint that are required to use Midtrans mobile SDK:
 
 ```
-POST /charge
+POST /charge/
 ```
 
 This endpoint will **proxy (forward)** client request to Midtrans Snap API `'https://app.midtrans.com/snap/v1/transactions'` (or `'https://app.sandbox.midtrans.com/snap/v1/transactions'` for sandbox) with **HTTP Authorization Header** generated based on your Midtrans `Server Key`.
@@ -34,8 +34,8 @@ Upload these to your host, and make sure the url `<url where you host this>/char
 Set `<url where you host this>/charge/index.php` as `merchant base url` in mobile SDK. (refer to [Midtrans mobile SDK doc](https://mobile-docs.midtrans.com))
 
 > **Advanced Tips:**
-> You can also configure your HTTP server to route `<url where you host this>/charge` url to `/charge/index.php` file. 
-> So the `merchant base url` can be just configured as `<url where you host this>/`(without charge/index.php, because SDK will automatically convert it to `<url where you host this>/charge` then your server will route to `/charge/index.php`).
+> You can also configure your HTTP server to route `<url where you host this>/charge/` url to `/charge/index.php` file. 
+> So the `merchant base url` can be just configured as `<url where you host this>/`(without charge/index.php, because SDK will automatically convert it to `<url where you host this>/charge/` then your server will route to `/charge/index.php`).
 
 ## Testing
 You can mock client's request by executing this CURL command to the `/charge/index.php` endpoint:
@@ -71,6 +71,9 @@ You can also import that curl command to Postman.
 
 ## Notes
 This is just for very basic implementation reference, in production, you should implement your backend more securely.
+
+## Troubleshooting
+When request sent to the url `https://<your url>/charge/index.php` fail, try to change the url to `https://<your url>/charge/`
 
 ### Get help
 * [Midtrans&nbsp;](https://www.midtrans.com)
