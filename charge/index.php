@@ -43,7 +43,7 @@ function chargeAPI($api_url, $server_key, $request_body){
     CURLOPT_URL => $api_url,
     CURLOPT_RETURNTRANSFER => 1,
     CURLOPT_POST => 1,
-    CURLOPT_HEADER => 1,
+    CURLOPT_HEADER => 0,
     // Add header to the request, including Authorization generated from server key
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
