@@ -36,7 +36,7 @@ Set `<url where you host this>/charge/index.php` as `merchant base url` in mobil
 
 > **Advanced Tips:**
 > You can also configure your HTTP server to route `<url where you host this>/charge/` url to `/charge/index.php` file. 
-> So the `merchant base url` can be just configured as `<url where you host this>/`(without charge/index.php, because SDK will automatically convert it to `<url where you host this>/charge/` then your server will route to `/charge/index.php`).
+> So the `merchant base url` can be just configured as `<url where you host this>/`(without charge/index.php, because SDK will automatically convert it to `<url where you host this>/charge/` then your server will route to `/charge/index.php/`).
 
 ## Testing
 You can mock client's request by executing this CURL command to the `/charge/index.php` endpoint:
@@ -63,10 +63,10 @@ curl -X POST -d '{
          "phone":"628112341234"
       }
    ]
-}' "https://<your url>/charge/index.php"
+}' "https://<your url>/charge/index.php/"
 ```
 
-Note: dont forget to change `"http://<your url>/charge/index.php"` to your url where you hosted the `/charge/index.php`.
+Note: dont forget to change `"http://<your url>/charge/index.php/"` to your url where you hosted the `/charge/index.php`.
 
 You can also import that curl command to Postman.
 
