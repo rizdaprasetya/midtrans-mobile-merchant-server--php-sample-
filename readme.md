@@ -1,5 +1,9 @@
 Simple Merchant Server Implementation Reference for Mobile SDK (PHP version).
 
+> _Also available in other Language Implementation:_
+> * [Ruby Sample Merchant Server for Midtrans Mobile SDK](https://github.com/Midtrans/Merchant-Server-for-Midtrans-Mobile-SDK-Ruby-Sample)
+> * [Python Sample Merchant Server for Midtrans Mobile SDK](https://github.com/Midtrans/Merchant-Server-for-Midtrans-Mobile-SDK-Python-Sample)
+
 ## Description
 This is a example mobile SDK server for Midtrans's iOS and Android SDK, as an implementation reference to use the mobile sdk.
 Please read more in [Documentation of Midtrans mobile SDK](http://mobile-docs.midtrans.com/).
